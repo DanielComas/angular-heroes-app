@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-agregar',
@@ -6,6 +7,12 @@ import { Component } from '@angular/core';
   styles: [
   ]
 })
-export class AgregarComponent {
+export class AgregarComponent implements OnInit {
 
+  constructor(private activateRoute: ActivatedRoute) {
+  }
+
+  ngOnInit() {
+    console.log(this.activateRoute.snapshot.paramMap.get('id'));
+  }
 }
